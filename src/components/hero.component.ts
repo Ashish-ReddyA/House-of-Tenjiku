@@ -11,30 +11,29 @@ import { CommonModule } from '@angular/common';
       <!-- Background Image -->
       <div class="absolute inset-0 z-0 w-full h-full">
         <img 
-          src="https://drive.google.com/file/d/15KxidQfmYNJZJKy7Q1EdBzgqsr5Xyi98/view?usp=sharing" 
+          src="image1.png" 
           alt="House of Tenjiku Background" 
-          class="w-full h-full object-cover opacity-90"
+          class="w-full h-full object-cover"
         >
-        <!-- Soft Overlay to blend image with brand colors and ensure text readability -->
-        <div class="absolute inset-0 bg-rose-50/40 mix-blend-overlay"></div>
-        <div class="absolute inset-0 bg-white/30"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-rose-50 via-transparent to-rose-50/20"></div>
+        <!-- Very light overlay to ensure text contrast without hiding the beautiful image -->
+        <div class="absolute inset-0 bg-gradient-to-b from-rose-50/10 via-transparent to-rose-50/20"></div>
+        <div class="absolute inset-0 bg-white/10 mix-blend-soft-light"></div>
       </div>
 
       <!-- Content Container -->
       <div class="relative z-20 text-center px-6 max-w-4xl fade-in pt-10 md:pt-0">
-        <p class="text-rose-900 tracking-[0.3em] text-sm md:text-base mb-6 font-semibold uppercase drop-shadow-sm bg-white/40 inline-block px-4 py-1 rounded-full backdrop-blur-sm">
-          Launching May 2026
+        <p class="text-rose-900 tracking-[0.3em] text-sm md:text-base mb-6 font-semibold uppercase drop-shadow-sm bg-white/60 inline-block px-4 py-1 rounded-full backdrop-blur-sm">
+          Launching Spring 2026
         </p>
         
-        <h1 class="text-6xl md:text-8xl font-medium mb-8 leading-tight text-stone-900 drop-shadow-sm">
+        <h1 class="text-6xl md:text-8xl font-medium mb-8 leading-tight text-stone-900 drop-shadow-md">
           <span class="block">House of</span>
           <span class="block italic text-rose-900">Tenjiku</span>
         </h1>
         
         <div class="w-24 h-1 bg-gradient-to-r from-transparent via-rose-900 to-transparent mx-auto mb-8"></div>
 
-        <p class="text-xl md:text-2xl text-stone-800 font-normal max-w-2xl mx-auto mb-12 leading-relaxed drop-shadow-md">
+        <p class="text-xl md:text-2xl text-stone-800 font-normal max-w-2xl mx-auto mb-12 leading-relaxed drop-shadow-md bg-white/30 backdrop-blur-[2px] rounded-lg p-4">
           We are crafting our signature collagen elixirs based on your voice. 
           Tell us what you desire, and we will create the formula based on your recommendations.
         </p>
