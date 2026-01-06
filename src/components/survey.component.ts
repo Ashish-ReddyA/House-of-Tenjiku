@@ -1,7 +1,6 @@
-import { Component, signal, inject, computed } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { GeminiService } from '../services/gemini.service';
 
 @Component({
   selector: 'app-survey',
@@ -14,8 +13,11 @@ import { GeminiService } from '../services/gemini.service';
         <!-- Header -->
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-serif text-stone-900 mb-4">Shape Our Essence</h2>
-          <p class="text-stone-500 text-lg max-w-2xl mx-auto">
+          <p class="text-stone-500 text-lg max-w-2xl mx-auto mb-6">
             We are crafting the ultimate wellness ritual. Share your desires, and help us create a formula that speaks to your needs.
+          </p>
+          <p class="text-xl md:text-2xl text-rose-900 font-serif max-w-2xl mx-auto">
+            Share Your Recommendations
           </p>
         </div>
 
@@ -260,8 +262,7 @@ import { GeminiService } from '../services/gemini.service';
   `
 })
 export class SurveyComponent {
-  private gemini = inject(GeminiService);
-
+  
   // Options
   flavorOptions = signal(['Yuzu Citrus', 'Wild Berry', 'Matcha', 'Ginger & Turmeric', 'Lychee', 'Hibiscus', 'White Peach', 'Jasmine']);
   needOptions = ['Radiant Skin', 'Deep Sleep', 'Joint Health', 'Mental Clarity', 'Energy Boost', 'Digestive Harmony'];
@@ -347,31 +348,25 @@ export class SurveyComponent {
 
     this.isLoading.set(true);
     
-    // In a real app, we would POST this data to a backend here.
-    console.log('Submission:', {
-       name: this.nameInput,
-       email: this.emailInput,
-       source: this.selectedSource(),
-       experience: this.selectedExperience(),
-       packaging: this.selectedPackaging(),
-       dosage: this.selectedDosage(),
-       packSize: this.selectedPackSize(),
-       flavors: this.selectedFlavors(),
-       needs: this.selectedNeeds(),
-       note: this.openTextInput
-    });
+    // Simulate network delay for effect
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
-    const response = await this.gemini.analyzePreferences(
-      this.nameInput,
-      this.selectedFlavors(), 
-      this.selectedNeeds(), 
-      this.selectedSource(),
-      this.selectedExperience(),
-      this.selectedPackaging(),
-      this.selectedDosage(),
-      this.selectedPackSize(),
-      this.openTextInput
-    );
+    const flavors = this.selectedFlavors().join(', ');
+    const mainFlavor = this.selectedFlavors()[0];
+    const needs = this.selectedNeeds().join(' and ');
+    
+    // Local "Alchemist" logic (Mock generation)
+    const response = `Greetings, ${this.nameInput}.
+    
+    For your journey, we have envisioned the "Tenjiku ${mainFlavor} Dawn Elixir."
+    
+    This signature blend harmonizes the delicate notes of ${flavors} with the structural purity of our ${this.selectedSource()} collagen. It is a taste of serenity, designed to awaken the senses while working deep within.
+    
+    Specifically crafted to support ${needs}, this formulation offers a ${this.selectedDosage().toLowerCase()} potency to match your experience as a ${this.selectedExperience()}. 
+    
+    Packaged in our ${this.selectedPackaging()}, it fits seamlessly into your life, honoring your wish: "${this.openTextInput || 'for a pure ritual'}".
+    
+    Welcome to the House of Tenjiku.`;
 
     this.result.set(response);
     this.isLoading.set(false);

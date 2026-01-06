@@ -1,7 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { GeminiService } from '../services/gemini.service';
 
 interface BrandConcept {
   conceptName: string;
@@ -88,7 +87,6 @@ interface BrandConcept {
   `
 })
 export class BrandLabComponent {
-  private gemini = inject(GeminiService);
   
   visionInput = '';
   isLoading = signal(false);
@@ -96,8 +94,30 @@ export class BrandLabComponent {
 
   async generateConcepts() {
     this.isLoading.set(true);
-    const results = await this.gemini.generateBrandIdentity(this.visionInput);
-    this.concepts.set(results);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Mock Data
+    this.concepts.set([
+      {
+        conceptName: "Kyoto Mist",
+        aesthetic: "Ethereal, foggy, muted tones with high-contrast typography.",
+        logoDescription: "A single brushstroke circle (Enso) fading into mist.",
+        colors: ["#E6E6E6", "#787878", "#1A1A1A", "#B0C4DE"]
+      },
+      {
+        conceptName: "Imperial Gold",
+        aesthetic: "Rich, opulent, heavy use of gold foil and deep reds.",
+        logoDescription: "A geometric lotus flower constructed from fine gold lines.",
+        colors: ["#4A0404", "#D4AF37", "#000000", "#FFF8DC"]
+      },
+      {
+        conceptName: "Zen Garden",
+        aesthetic: "Organic, structured, balanced, utilizing stone textures.",
+        logoDescription: "Three stacked stones representing balance and longevity.",
+        colors: ["#8B8589", "#556B2F", "#F5F5DC", "#6B4226"]
+      }
+    ]);
     this.isLoading.set(false);
   }
 }

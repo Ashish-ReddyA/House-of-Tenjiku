@@ -27,9 +27,9 @@ import { LogoComponent } from './components/logo.component';
 
       <app-hero />
       
-      <app-about-us />
-
       <app-survey />
+      
+      <app-about-us />
 
       <footer class="bg-stone-50 py-12 border-t border-stone-200">
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-stone-500">

@@ -16,8 +16,12 @@
               "base": "./dist",
               "browser": "."
             },
+            "index": "index.html",
             "browser": "index.tsx",
-            "tsConfig": "tsconfig.json"
+            "tsConfig": "tsconfig.json",
+            "assets": [
+              "image1.png"
+            ]
           },
           "configurations": {
             "production": {
@@ -48,5 +52,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
