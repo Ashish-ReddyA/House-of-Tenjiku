@@ -446,12 +446,18 @@ export class SurveyComponent {
   isLoading = signal(false);
   result = signal<string | null>(null);
 
+  isValidEmail(email: string): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  }
+
   isValid = computed(() => {
     // Flavors: either selected flavors OR custom flavor input (minimum 1)
     const hasFlavors = this.selectedFlavors().length > 0 || this.customFlavorInput.trim().length > 0;
     
     return this.nameInput.length > 0 &&
            this.emailInput.length > 0 &&
+           this.isValidEmail(this.emailInput) &&
            this.selectedSource() !== '' &&
            this.selectedExperience() !== '' &&
            hasFlavors &&
