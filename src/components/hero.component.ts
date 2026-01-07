@@ -23,11 +23,7 @@ import { ThreeSceneComponent } from './three-scene.component';
 
       <!-- Background Image with Dark Overlay -->
       <div class="absolute inset-0 z-[2] w-full h-full">
-        <img 
-          src="/House-of-Tenjiku/image2.png" 
-          alt="House of Tenjiku Background" 
-          class="w-full h-full object-cover opacity-30"
-        >
+        
         <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/60 to-neutral-950/80"></div>
       </div>
 
