@@ -32,15 +32,25 @@ import { LogoComponent } from './components/logo.component';
       
       <app-about-us />
 
-      <footer class="bg-neutral-900/95 py-12 border-t border-neutral-800/50 backdrop-blur-sm">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400">
-          <div class="mb-4 md:mb-0">
-            &copy; 2026 House of Tenjiku. All rights reserved.
+      <footer id="footer" class="relative min-h-screen bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 py-12 border-t border-neutral-800/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 flex flex-col justify-center items-center min-h-screen text-sm text-neutral-400">
+          <div class="text-center mb-8">
+            <h3 class="text-4xl md:text-6xl font-serif text-neutral-50 mb-6">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400">Thank You</span>
+            </h3>
+            <p class="text-neutral-300 text-lg mb-12 max-w-2xl">
+              Your journey with House of Tenjiku begins here. We're crafting something extraordinary, just for you.
+            </p>
           </div>
-          <div class="flex space-x-6">
-            <a href="#" class="hover:text-amber-400 transition-colors">Instagram</a>
-            <a href="#" class="hover:text-amber-400 transition-colors">TikTok</a>
-            <a href="#" class="hover:text-amber-400 transition-colors">Privacy</a>
+          <div class="w-full flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+              &copy; 2026 House of Tenjiku. All rights reserved.
+            </div>
+            <div class="flex space-x-6">
+              <a href="#" class="hover:text-amber-400 transition-colors">Instagram</a>
+              <a href="#" class="hover:text-amber-400 transition-colors">TikTok</a>
+              <a href="#" class="hover:text-amber-400 transition-colors">Privacy</a>
+            </div>
           </div>
         </div>
       </footer>

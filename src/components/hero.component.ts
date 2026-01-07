@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InterestService } from '../services/interest.service';
+import { ThreeSceneComponent } from './three-scene.component';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ThreeSceneComponent],
   template: `
     <section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950">
       
+      <!-- Enhanced 3D Scene Background -->
+      <app-three-scene class="absolute inset-0 z-[1]"></app-three-scene>
+      
       <!-- Premium Background Elements -->
-      <div class="absolute inset-0 z-0 w-full h-full opacity-40">
+      <div class="absolute inset-0 z-[2] w-full h-full opacity-40">
         <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-amber-500/20 via-rose-600/15 to-transparent rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-[700px] h-[700px] bg-gradient-to-tr from-rose-700/20 via-amber-600/10 to-transparent rounded-full blur-3xl"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(217,119,6,0.1),transparent_60%)]"></div>
@@ -18,7 +22,7 @@ import { InterestService } from '../services/interest.service';
       </div>
 
       <!-- Background Image with Dark Overlay -->
-      <div class="absolute inset-0 z-0 w-full h-full">
+      <div class="absolute inset-0 z-[2] w-full h-full">
         <img 
           src="/House-of-Tenjiku/image2.png" 
           alt="House of Tenjiku Background" 
@@ -28,10 +32,10 @@ import { InterestService } from '../services/interest.service';
       </div>
 
       <!-- Subtle Grid Pattern -->
-      <div class="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] z-0"></div>
+      <div class="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] z-[2]"></div>
 
       <!-- Content Container -->
-      <div class="relative z-20 text-center px-4 md:px-6 max-w-6xl fade-in py-4 md:py-6">
+      <div class="relative z-[10] text-center px-4 md:px-6 max-w-6xl fade-in py-4 md:py-6">
         <div class="inline-flex items-center gap-2 mb-3 md:mb-4">
           <div class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-amber-500/60 to-amber-500/60"></div>
           <p class="text-amber-500/90 tracking-[0.3em] md:tracking-[0.5em] text-[10px] md:text-xs font-bold uppercase px-3 md:px-6 py-1.5 md:py-2.5 bg-neutral-900/80 backdrop-blur-md border border-amber-500/20 rounded-full">

@@ -2,25 +2,29 @@ import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpParams } from '@angular/common/http';
+import { Petals3dComponent } from './petals-3d.component';
 
 @Component({
   selector: 'app-survey',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, Petals3dComponent],
   template: `
-    <section id="survey" class="relative py-32 px-6 bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 min-h-[80vh] flex flex-col items-center justify-center overflow-visible">
+    <section id="survey" class="relative py-32 px-6 bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 min-h-screen flex flex-col items-center justify-center overflow-visible">
+      
+      <!-- 3D Petals Background -->
+      <app-petals-3d [intensity]="1.5" color="mixed" class="absolute inset-0 z-[1]"></app-petals-3d>
       
       <!-- Premium Background Elements -->
-      <div class="absolute inset-0 opacity-30">
+      <div class="absolute inset-0 z-[2] opacity-30">
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-amber-500/10 via-rose-600/8 to-transparent rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-rose-700/10 via-amber-600/8 to-transparent rounded-full blur-3xl"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(217,119,6,0.05),transparent_70%)]"></div>
       </div>
 
       <!-- Subtle Grid Pattern -->
-      <div class="absolute inset-0 opacity-[0.02] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      <div class="absolute inset-0 z-[2] opacity-[0.02] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
-      <div class="max-w-5xl w-full relative z-10">
+      <div class="max-w-5xl w-full relative z-[10]">
         
         <!-- Premium Header -->
         <div class="text-center mb-20">

@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Petals3dComponent } from './petals-3d.component';
 
 @Component({
   selector: 'app-shape-essence',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, Petals3dComponent],
   template: `
-    <section id="essence" class="relative py-40 bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 overflow-hidden">
+    <section id="essence" class="relative py-40 min-h-screen bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 overflow-hidden">
+      
+      <!-- 3D Petals Background -->
+      <app-petals-3d [intensity]="1.8" color="amber" class="absolute inset-0 z-[1]"></app-petals-3d>
       
       <!-- Premium Decorative Background Elements -->
-      <div class="absolute top-0 left-0 w-full h-full opacity-30">
+      <div class="absolute top-0 left-0 w-full h-full z-[2] opacity-30">
         <div class="absolute top-20 right-0 w-[600px] h-[600px] bg-gradient-to-br from-amber-500/20 via-rose-600/15 to-transparent rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-0 w-[700px] h-[700px] bg-gradient-to-tr from-rose-700/20 via-amber-600/10 to-transparent rounded-full blur-3xl"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(217,119,6,0.08),transparent_60%)]"></div>
@@ -17,9 +21,9 @@ import { CommonModule } from '@angular/common';
       </div>
 
       <!-- Subtle Grid Pattern -->
-      <div class="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      <div class="absolute inset-0 z-[2] opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
-      <div class="container mx-auto px-6 relative z-10">
+      <div class="container mx-auto px-6 relative z-[10]">
         
         <!-- Premium Header Section -->
         <div class="text-center max-w-5xl mx-auto mb-24">
