@@ -118,9 +118,15 @@ import { Petals3dComponent } from './petals-3d.component';
                      <input 
                       [(ngModel)]="emailInput"
                       type="email" 
+                      required
+                      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                       class="w-full p-4 bg-neutral-800/50 border-b-2 border-neutral-700 focus:border-amber-500 outline-none transition-colors text-neutral-100 placeholder-neutral-500 rounded-t-lg backdrop-blur-sm"
-                      placeholder="For launch updates"
+                      placeholder="your.email@example.com"
+                      autocomplete="email"
                     >
+                    @if (emailInput && !isValidEmail(emailInput)) {
+                      <p class="text-rose-400 text-sm mt-2">Please enter a valid email address</p>
+                    }
                   </div>
                 </div>
               </div>
