@@ -20,7 +20,8 @@
             "browser": "index.tsx",
             "tsConfig": "tsconfig.json",
             "assets": [
-              "image1.png"
+              "image1.png",
+              "image2.png"
             ]
           },
           "configurations": {
