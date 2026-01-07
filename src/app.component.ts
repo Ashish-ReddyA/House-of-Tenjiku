@@ -10,7 +10,7 @@ import { LogoComponent } from './components/logo.component';
   standalone: true,
   imports: [CommonModule, HeroComponent, SurveyComponent, AboutUsComponent, LogoComponent],
   template: `
-    <main class="min-h-screen bg-stone-50 text-stone-900 selection:bg-rose-200 selection:text-rose-900">
+    <main class="min-h-screen bg-neutral-950 text-neutral-50 selection:bg-amber-500/30 selection:text-neutral-50">
       
       <!-- Nav Placeholder -->
       <nav class="absolute top-0 w-full p-6 z-50 flex justify-between items-center bg-transparent">
@@ -18,10 +18,11 @@ import { LogoComponent } from './components/logo.component';
         <!-- Logo Section -->
         <app-logo />
 
-        <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-stone-600">
-          <a href="#philosophy" class="hover:text-rose-900 transition-colors">PHILOSOPHY</a>
-          <a href="#" class="hover:text-rose-900 transition-colors">INGREDIENTS</a>
-          <a href="#" class="hover:text-rose-900 transition-colors">CONTACT</a>
+        <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-neutral-300">
+          <a href="#survey" class="hover:text-amber-400 transition-colors">ESSENCE</a>
+          <a href="#philosophy" class="hover:text-amber-400 transition-colors">PHILOSOPHY</a>
+          <a href="#" class="hover:text-amber-400 transition-colors">INGREDIENTS</a>
+          <a href="#" class="hover:text-amber-400 transition-colors">CONTACT</a>
         </div>
       </nav>
 
@@ -31,15 +32,15 @@ import { LogoComponent } from './components/logo.component';
       
       <app-about-us />
 
-      <footer class="bg-stone-50 py-12 border-t border-stone-200">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-stone-500">
+      <footer class="bg-neutral-900/95 py-12 border-t border-neutral-800/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400">
           <div class="mb-4 md:mb-0">
             &copy; 2026 House of Tenjiku. All rights reserved.
           </div>
           <div class="flex space-x-6">
-            <a href="#" class="hover:text-rose-900 transition-colors">Instagram</a>
-            <a href="#" class="hover:text-rose-900 transition-colors">TikTok</a>
-            <a href="#" class="hover:text-rose-900 transition-colors">Privacy</a>
+            <a href="#" class="hover:text-amber-400 transition-colors">Instagram</a>
+            <a href="#" class="hover:text-amber-400 transition-colors">TikTok</a>
+            <a href="#" class="hover:text-amber-400 transition-colors">Privacy</a>
           </div>
         </div>
       </footer>
