@@ -393,33 +393,9 @@ import { HttpParams } from '@angular/common/http';
               
               <!-- Helper text for incomplete form -->
               @if (!isValid() && !isLoading()) {
-                <div class="mt-4 text-center space-y-2">
-                  <p class="text-sm text-neutral-400 italic">
-                    Please complete all required fields above to submit
-                  </p>
-                  <!-- Debug info -->
-                  <div class="text-xs text-neutral-500 space-y-1">
-                    <p>Validation Status:</p>
-                    <ul class="list-disc list-inside space-y-0.5">
-                      <li>Name: {{ nameInput ? '✓' : '✗' }}</li>
-                      <li>Email: {{ emailInput ? '✓' : '✗' }}</li>
-                      <li>Source: {{ selectedSource() ? '✓' : '✗' }}</li>
-                      <li>Experience: {{ selectedExperience() ? '✓' : '✗' }}</li>
-                      <li>Flavors: {{ (selectedFlavors().length > 0 || customFlavorInput.trim()) ? '✓' : '✗' }} 
-                        @if (selectedFlavors().length > 0) {
-                          ({{ selectedFlavors().length }} selected)
-                        }
-                        @if (customFlavorInput.trim()) {
-                          + custom
-                        }
-                      </li>
-                      <li>Needs: {{ selectedNeeds().length > 0 ? '✓ (' + selectedNeeds().length + ')' : '✗' }}</li>
-                      <li>Packaging: {{ selectedPackaging() ? '✓' : '✗' }}</li>
-                      <li>Dosage: {{ selectedDosage() ? '✓' : '✗' }}</li>
-                      <li>Pack Size: {{ selectedPackSize() ? '✓' : '✗' }}</li>
-                    </ul>
-                  </div>
-                </div>
+                <p class="mt-4 text-center text-sm text-neutral-400 italic">
+                  Please complete all required fields above to submit
+                </p>
               }
             </div>
 
@@ -464,7 +440,7 @@ export class SurveyComponent {
     // Flavors: either selected flavors OR custom flavor input (minimum 1)
     const hasFlavors = this.selectedFlavors().length > 0 || this.customFlavorInput.trim().length > 0;
     
-    const valid = this.nameInput.length > 0 &&
+    return this.nameInput.length > 0 &&
            this.emailInput.length > 0 &&
            this.selectedSource() !== '' &&
            this.selectedExperience() !== '' &&
@@ -473,24 +449,6 @@ export class SurveyComponent {
            this.selectedPackaging() !== '' &&
            this.selectedDosage() !== '' &&
            this.selectedPackSize() !== '';
-    
-    // Debug logging
-    console.log('Validation check:', {
-      name: this.nameInput.length > 0,
-      email: this.emailInput.length > 0,
-      source: this.selectedSource() !== '',
-      experience: this.selectedExperience() !== '',
-      flavors: hasFlavors,
-      selectedFlavors: this.selectedFlavors().length,
-      customFlavor: this.customFlavorInput.trim().length > 0,
-      needs: this.selectedNeeds().length > 0,
-      packaging: this.selectedPackaging() !== '',
-      dosage: this.selectedDosage() !== '',
-      packSize: this.selectedPackSize() !== '',
-      isValid: valid
-    });
-    
-    return valid;
   });
 
   toggleFlavor(flavor: string) {
