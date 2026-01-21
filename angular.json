@@ -23,7 +23,8 @@
             "assets": [
               "image1.png",
               "image2.png",
-              "index.css"
+              "index.css",
+              "favicon.svg"
             ]
           },
           "configurations": {
