@@ -20,6 +20,9 @@
             "browser": "index.tsx",
             "tsConfig": "tsconfig.json",
             "baseHref": "/House-of-Tenjiku/",
+            "styles": [
+              "index.css"
+            ],
             "assets": [
               "image1.png",
               "image2.png",
@@ -31,6 +34,10 @@
           "configurations": {
             "production": {
               "outputHashing": "all"
+            },
+            "production-custom-domain": {
+              "outputHashing": "all",
+              "baseHref": "/"
             },
             "development": {
               "optimization": false,
