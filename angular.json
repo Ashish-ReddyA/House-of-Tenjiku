@@ -19,9 +19,11 @@
             "index": "index.html",
             "browser": "index.tsx",
             "tsConfig": "tsconfig.json",
+            "baseHref": "/House-of-Tenjiku/",
             "assets": [
               "image1.png",
-              "image2.png"
+              "image2.png",
+              "index.css"
             ]
           },
           "configurations": {
