@@ -35,6 +35,24 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production
 
+      - name: Verify and copy assets
+        run: |
+          echo "Build output contents:"
+          ls -la ./dist/ || echo "dist directory not found"
+          echo "Checking for key files:"
+          [ -f ./dist/index.html ] && echo "✓ index.html exists" || echo "✗ index.html missing"
+          [ -f ./dist/index.css ] && echo "✓ index.css exists" || echo "✗ index.css missing"
+          [ -f ./dist/favicon.ico ] && echo "✓ favicon.ico exists" || echo "✗ favicon.ico missing"
+          [ -f ./dist/favicon.svg ] && echo "✓ favicon.svg exists" || echo "✗ favicon.svg missing"
+          echo "Checking for JS files:"
+          ls -la ./dist/*.js 2>/dev/null | head -5 || echo "No JS files found"
+          # Copy assets if they don't exist
+          [ ! -f ./dist/index.css ] && cp index.css ./dist/ && echo "Copied index.css" || true
+          [ ! -f ./dist/favicon.ico ] && cp favicon.ico ./dist/ && echo "Copied favicon.ico" || true
+          [ ! -f ./dist/favicon.svg ] && cp favicon.svg ./dist/ && echo "Copied favicon.svg" || true
+          echo "Final dist contents:"
+          find ./dist -type f -name "*.js" -o -name "*.css" -o -name "*.ico" -o -name "*.svg" -o -name "index.html" | head -20
+
       - name: Create .nojekyll file
         run: touch ./dist/.nojekyll
 

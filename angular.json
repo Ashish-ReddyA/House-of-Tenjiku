@@ -24,7 +24,8 @@
               "image1.png",
               "image2.png",
               "index.css",
-              "favicon.svg"
+              "favicon.svg",
+              "favicon.ico"
             ]
           },
           "configurations": {
