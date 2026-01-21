@@ -61,7 +61,7 @@ import { Petals3dComponent } from './petals-3d.component';
           </div>
         } @else if (result()) {
           <!-- Premium Result View -->
-          <div class="bg-gradient-to-br from-neutral-900/95 via-neutral-800/95 to-neutral-900/95 backdrop-blur-2xl border-2 border-neutral-700/50 p-10 md:p-16 rounded-3xl shadow-2xl relative overflow-hidden fade-in">
+          <div id="survey-result" class="bg-gradient-to-br from-neutral-900/95 via-neutral-800/95 to-neutral-900/95 backdrop-blur-2xl border-2 border-neutral-700/50 p-10 md:p-16 rounded-3xl shadow-2xl relative overflow-hidden fade-in">
              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-rose-500 to-amber-500"></div>
              <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-3xl"></div>
              <div class="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-rose-500/10 to-transparent rounded-full blur-3xl"></div>
@@ -78,8 +78,8 @@ import { Petals3dComponent } from './petals-3d.component';
 
                <div class="mt-16 pt-10 border-t border-neutral-700/50 text-center">
                  <p class="text-neutral-400 mb-8 italic text-lg">
-                   "Thank you, <span class="text-amber-400 font-semibold not-italic">{{nameInput}}</span>. Your preferences have been archived in the House of Tenjiku. 
-                   We will notify <span class="text-rose-400 font-semibold not-italic">{{emailInput}}</span> when this creation comes to life."
+                   "Thank you, <span class="text-amber-400 font-semibold not-italic">{{nameInput}}</span>. Your recommendation has been received and will be considered as we create the perfect blend from the most liked recommendations. 
+                   We will notify <span class="text-rose-400 font-semibold not-italic">{{emailInput}}</span> when our creation comes to life."
                  </p>
                  <button (click)="reset()" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-semibold transition-colors underline decoration-amber-500/50 hover:decoration-amber-400">
                    Submit Another Profile
@@ -92,40 +92,40 @@ import { Petals3dComponent } from './petals-3d.component';
           </div>
         } @else {
           <!-- Premium Survey Form -->
-          <div class="space-y-12">
+          <div class="space-y-6">
             
             <!-- SECTION 1: The Seeker -->
-            <div class="bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl p-10 rounded-3xl border border-neutral-700/50 shadow-2xl relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-2xl"></div>
+            <div class="bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl p-6 rounded-2xl border border-neutral-700/50 shadow-2xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-2xl"></div>
               <div class="relative z-10">
-                <div class="flex items-center gap-3 mb-10">
-                  <div class="h-px w-8 bg-gradient-to-r from-amber-500/60 to-transparent"></div>
+                <div class="flex items-center gap-2 mb-6">
+                  <div class="h-px w-6 bg-gradient-to-r from-amber-500/60 to-transparent"></div>
                   <h3 class="text-xs font-bold tracking-[0.3em] text-amber-400/90 uppercase">I. The Seeker</h3>
                   <div class="h-px flex-1 bg-gradient-to-r from-amber-500/60 to-transparent"></div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                  <div class="space-y-3">
-                    <label class="block text-lg font-serif text-neutral-200">Your Name</label>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="space-y-2">
+                    <label class="block text-sm font-serif text-neutral-200">Your Name</label>
                     <input 
                       [(ngModel)]="nameInput"
                       type="text" 
-                      class="w-full p-4 bg-neutral-800/50 border-b-2 border-neutral-700 focus:border-amber-500 outline-none transition-colors text-neutral-100 placeholder-neutral-500 rounded-t-lg backdrop-blur-sm"
+                      class="w-full p-2.5 bg-neutral-800/50 border-b-2 border-neutral-700 focus:border-amber-500 outline-none transition-colors text-sm text-neutral-100 placeholder-neutral-500 rounded-t-lg backdrop-blur-sm"
                       placeholder="Enter your name"
                     >
                   </div>
-                  <div class="space-y-3">
-                     <label class="block text-lg font-serif text-neutral-200">Email Address</label>
+                  <div class="space-y-2">
+                     <label class="block text-sm font-serif text-neutral-200">Email Address</label>
                      <input 
                       [(ngModel)]="emailInput"
                       type="email" 
                       required
                       pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                      class="w-full p-4 bg-neutral-800/50 border-b-2 border-neutral-700 focus:border-amber-500 outline-none transition-colors text-neutral-100 placeholder-neutral-500 rounded-t-lg backdrop-blur-sm"
+                      class="w-full p-2.5 bg-neutral-800/50 border-b-2 border-neutral-700 focus:border-amber-500 outline-none transition-colors text-sm text-neutral-100 placeholder-neutral-500 rounded-t-lg backdrop-blur-sm"
                       placeholder="your.email@example.com"
                       autocomplete="email"
                     >
                     @if (emailInput && !isValidEmail(emailInput)) {
-                      <p class="text-rose-400 text-sm mt-2">Please enter a valid email address</p>
+                      <p class="text-rose-400 text-xs mt-1">Please enter a valid email address</p>
                     }
                   </div>
                 </div>
@@ -133,37 +133,37 @@ import { Petals3dComponent } from './petals-3d.component';
             </div>
 
             <!-- SECTION 2: The Vessel -->
-            <div class="bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl p-10 rounded-3xl border border-neutral-700/50 shadow-2xl relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-rose-500/10 to-transparent rounded-full blur-2xl"></div>
+            <div class="bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl p-6 rounded-2xl border border-neutral-700/50 shadow-2xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-rose-500/10 to-transparent rounded-full blur-2xl"></div>
               <div class="relative z-10">
-                 <div class="flex items-center gap-3 mb-10">
-                   <div class="h-px w-8 bg-gradient-to-r from-rose-500/60 to-transparent"></div>
+                 <div class="flex items-center gap-2 mb-6">
+                   <div class="h-px w-6 bg-gradient-to-r from-rose-500/60 to-transparent"></div>
                    <h3 class="text-xs font-bold tracking-[0.3em] text-rose-400/90 uppercase">II. The Vessel</h3>
                    <div class="h-px flex-1 bg-gradient-to-r from-rose-500/60 to-transparent"></div>
                  </div>
                  
-                 <div class="grid md:grid-cols-2 gap-12">
+                 <div class="grid md:grid-cols-2 gap-6">
                    <!-- Source -->
-                   <div class="space-y-5">
-                      <label class="block text-xl font-serif text-neutral-200">Preferred Source</label>
-                      <div class="flex flex-col gap-4">
+                   <div class="space-y-3">
+                      <label class="block text-sm font-serif text-neutral-200">Preferred Source</label>
+                      <div class="flex flex-col gap-2">
                         @for (opt of sourceOptions; track opt) {
-                          <label class="flex items-center space-x-4 cursor-pointer group p-3 rounded-lg hover:bg-neutral-800/50 transition-colors">
-                            <input type="radio" [name]="'source'" [value]="opt" [checked]="selectedSource() === opt" (change)="selectedSource.set(opt); $event.stopPropagation()" class="form-radio text-amber-500 focus:ring-amber-500 h-5 w-5 border-neutral-600 bg-neutral-800">
-                            <span class="text-neutral-300 group-hover:text-neutral-100 transition-colors">{{ opt }}</span>
+                          <label class="flex items-center space-x-3 cursor-pointer group p-2 rounded-lg hover:bg-neutral-800/50 transition-colors">
+                            <input type="radio" [name]="'source'" [value]="opt" [checked]="selectedSource() === opt" (change)="selectedSource.set(opt); $event.stopPropagation()" class="form-radio text-amber-500 focus:ring-amber-500 h-4 w-4 border-neutral-600 bg-neutral-800">
+                            <span class="text-sm text-neutral-300 group-hover:text-neutral-100 transition-colors">{{ opt }}</span>
                           </label>
                         }
                       </div>
                    </div>
 
                    <!-- Experience -->
-                   <div class="space-y-5">
-                      <label class="block text-xl font-serif text-neutral-200">Experience Level</label>
-                       <div class="flex flex-col gap-4">
+                   <div class="space-y-3">
+                      <label class="block text-sm font-serif text-neutral-200">Experience Level</label>
+                       <div class="flex flex-col gap-2">
                         @for (opt of experienceOptions; track opt) {
-                          <label class="flex items-center space-x-4 cursor-pointer group p-3 rounded-lg hover:bg-neutral-800/50 transition-colors">
-                            <input type="radio" [name]="'exp'" [value]="opt" [checked]="selectedExperience() === opt" (change)="selectedExperience.set(opt); $event.stopPropagation()" class="form-radio text-amber-500 focus:ring-amber-500 h-5 w-5 border-neutral-600 bg-neutral-800">
-                            <span class="text-neutral-300 group-hover:text-neutral-100 transition-colors">{{ opt }}</span>
+                          <label class="flex items-center space-x-3 cursor-pointer group p-2 rounded-lg hover:bg-neutral-800/50 transition-colors">
+                            <input type="radio" [name]="'exp'" [value]="opt" [checked]="selectedExperience() === opt" (change)="selectedExperience.set(opt); $event.stopPropagation()" class="form-radio text-amber-500 focus:ring-amber-500 h-4 w-4 border-neutral-600 bg-neutral-800">
+                            <span class="text-sm text-neutral-300 group-hover:text-neutral-100 transition-colors">{{ opt }}</span>
                           </label>
                         }
                       </div>
@@ -173,33 +173,33 @@ import { Petals3dComponent } from './petals-3d.component';
             </div>
 
             <!-- SECTION 3: The Ritual -->
-            <div class="bg-gradient-to-br from-neutral-900/95 via-neutral-800/95 to-neutral-900/95 backdrop-blur-xl p-10 md:p-12 rounded-3xl border-2 border-neutral-700/50 shadow-2xl relative overflow-hidden">
+            <div class="bg-gradient-to-br from-neutral-900/95 via-neutral-800/95 to-neutral-900/95 backdrop-blur-xl p-6 rounded-2xl border-2 border-neutral-700/50 shadow-2xl relative overflow-hidden">
               <!-- Enhanced Background Effects -->
-              <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-500/15 via-purple-400/10 to-transparent rounded-full blur-3xl"></div>
-              <div class="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-amber-500/10 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
+              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/15 via-purple-400/10 to-transparent rounded-full blur-3xl"></div>
+              <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-amber-500/10 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
               <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(168,85,247,0.08),transparent_60%)]"></div>
               
               <div class="relative z-10">
                  <!-- Enhanced Header -->
-                 <div class="flex items-center gap-4 mb-12">
-                   <div class="h-px w-12 bg-gradient-to-r from-transparent via-purple-500/60 to-purple-500/60"></div>
-                   <div class="flex items-center gap-3">
-                     <div class="w-2 h-2 rounded-full bg-purple-400/80 shadow-lg shadow-purple-500/30"></div>
+                 <div class="flex items-center gap-3 mb-6">
+                   <div class="h-px w-8 bg-gradient-to-r from-transparent via-purple-500/60 to-purple-500/60"></div>
+                   <div class="flex items-center gap-2">
+                     <div class="w-1.5 h-1.5 rounded-full bg-purple-400/80 shadow-lg shadow-purple-500/30"></div>
                      <h3 class="text-xs font-bold tracking-[0.4em] text-purple-400/90 uppercase">III. The Ritual</h3>
-                     <div class="w-2 h-2 rounded-full bg-purple-400/80 shadow-lg shadow-purple-500/30"></div>
+                     <div class="w-1.5 h-1.5 rounded-full bg-purple-400/80 shadow-lg shadow-purple-500/30"></div>
                    </div>
                    <div class="h-px flex-1 bg-gradient-to-r from-purple-500/60 to-transparent"></div>
                  </div>
                  
-                 <div class="space-y-12">
+                 <div class="space-y-6">
                     <!-- Packaging - Enhanced Design -->
-                    <div class="space-y-6">
-                      <div class="flex items-center gap-3 mb-2">
-                        <div class="w-1 h-6 bg-gradient-to-b from-purple-400 to-purple-600 rounded-full"></div>
-                        <label class="text-2xl font-serif text-neutral-100 font-semibold">Preferred Format</label>
+                    <div class="space-y-3">
+                      <div class="flex items-center gap-2 mb-1">
+                        <div class="w-1 h-4 bg-gradient-to-b from-purple-400 to-purple-600 rounded-full"></div>
+                        <label class="text-base font-serif text-neutral-100 font-semibold">Preferred Format</label>
                       </div>
-                      <p class="text-sm text-neutral-400 italic ml-4">Choose how you'd like to receive your elixir</p>
-                      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                      <p class="text-xs text-neutral-400 italic ml-3">Choose how you'd like to receive your elixir</p>
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3">
                         @for (opt of packagingOptions; track opt) {
                           <button 
                             type="button"
@@ -216,9 +216,9 @@ import { Petals3dComponent } from './petals-3d.component';
                             [class.bg-neutral-800/60]="selectedPackaging() !== opt"
                             [class.text-neutral-300]="selectedPackaging() !== opt"
                             [class.border-neutral-700/50]="selectedPackaging() !== opt"
-                            class="group relative py-5 px-6 rounded-2xl transition-all duration-300 font-medium border-2 hover:border-amber-500/50 hover:bg-neutral-800/80 hover:shadow-xl hover:shadow-amber-500/20 hover:scale-[1.02] backdrop-blur-sm"
+                            class="group relative py-3 px-4 rounded-xl transition-all duration-300 font-medium border-2 hover:border-amber-500/50 hover:bg-neutral-800/80 hover:shadow-xl hover:shadow-amber-500/20 hover:scale-[1.02] backdrop-blur-sm text-sm"
                           >
-                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover:from-white/5 group-hover:via-white/0 group-hover:to-white/0 transition-all duration-300"></div>
+                            <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover:from-white/5 group-hover:via-white/0 group-hover:to-white/0 transition-all duration-300"></div>
                             <span class="relative z-10 block text-center font-semibold leading-tight">{{ opt }}</span>
                           </button>
                         }
@@ -226,15 +226,15 @@ import { Petals3dComponent } from './petals-3d.component';
                     </div>
 
                     <!-- Dosage & Supply - Enhanced Grid Design -->
-                     <div class="grid md:grid-cols-2 gap-10">
+                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Potency -->
-                        <div class="space-y-6 bg-neutral-800/30 rounded-2xl p-6 border border-neutral-700/30 backdrop-blur-sm">
-                          <div class="flex items-center gap-3 mb-2">
-                            <div class="w-1 h-6 bg-gradient-to-b from-amber-400 to-amber-600 rounded-full"></div>
-                            <label class="text-xl font-serif text-neutral-100 font-semibold">Potency</label>
+                        <div class="space-y-3 bg-neutral-800/30 rounded-xl p-4 border border-neutral-700/30 backdrop-blur-sm">
+                          <div class="flex items-center gap-2 mb-1">
+                            <div class="w-1 h-4 bg-gradient-to-b from-amber-400 to-amber-600 rounded-full"></div>
+                            <label class="text-sm font-serif text-neutral-100 font-semibold">Potency</label>
                           </div>
-                          <p class="text-xs text-neutral-400 italic ml-4">Strength per serving</p>
-                          <div class="flex flex-wrap gap-3 mt-4">
+                          <p class="text-xs text-neutral-400 italic ml-3">Strength per serving</p>
+                          <div class="flex flex-wrap gap-2 mt-2">
                             @for (opt of dosageOptions; track opt) {
                               <button 
                                 type="button"
@@ -250,7 +250,7 @@ import { Petals3dComponent } from './petals-3d.component';
                                 [class.bg-neutral-800/50]="selectedDosage() !== opt"
                                 [class.text-neutral-300]="selectedDosage() !== opt"
                                 [class.border-neutral-700/50]="selectedDosage() !== opt"
-                                class="group relative py-3 px-6 rounded-xl transition-all duration-300 font-semibold border-2 hover:border-amber-500/50 hover:bg-neutral-800/70 hover:shadow-lg hover:shadow-amber-500/15 hover:scale-105 text-sm"
+                                class="group relative py-2 px-4 rounded-lg transition-all duration-300 font-semibold border-2 hover:border-amber-500/50 hover:bg-neutral-800/70 hover:shadow-lg hover:shadow-amber-500/15 hover:scale-105 text-xs"
                               >
                                 <span class="relative z-10">{{ opt }}</span>
                               </button>
@@ -259,13 +259,13 @@ import { Petals3dComponent } from './petals-3d.component';
                         </div>
 
                         <!-- Supply Size -->
-                        <div class="space-y-6 bg-neutral-800/30 rounded-2xl p-6 border border-neutral-700/30 backdrop-blur-sm">
-                          <div class="flex items-center gap-3 mb-2">
-                            <div class="w-1 h-6 bg-gradient-to-b from-rose-400 to-rose-600 rounded-full"></div>
-                            <label class="text-xl font-serif text-neutral-100 font-semibold">Supply Size</label>
+                        <div class="space-y-3 bg-neutral-800/30 rounded-xl p-4 border border-neutral-700/30 backdrop-blur-sm">
+                          <div class="flex items-center gap-2 mb-1">
+                            <div class="w-1 h-4 bg-gradient-to-b from-rose-400 to-rose-600 rounded-full"></div>
+                            <label class="text-sm font-serif text-neutral-100 font-semibold">Supply Size</label>
                           </div>
-                          <p class="text-xs text-neutral-400 italic ml-4">Choose your commitment</p>
-                          <div class="flex flex-wrap gap-3 mt-4">
+                          <p class="text-xs text-neutral-400 italic ml-3">Choose your commitment</p>
+                          <div class="flex flex-wrap gap-2 mt-2">
                             @for (opt of packSizeOptions; track opt) {
                               <button 
                                 type="button"
@@ -281,7 +281,7 @@ import { Petals3dComponent } from './petals-3d.component';
                                 [class.bg-neutral-800/50]="selectedPackSize() !== opt"
                                 [class.text-neutral-300]="selectedPackSize() !== opt"
                                 [class.border-neutral-700/50]="selectedPackSize() !== opt"
-                                class="group relative py-3 px-6 rounded-xl transition-all duration-300 font-semibold border-2 hover:border-rose-500/50 hover:bg-neutral-800/70 hover:shadow-lg hover:shadow-rose-500/15 hover:scale-105 text-sm"
+                                class="group relative py-2 px-4 rounded-lg transition-all duration-300 font-semibold border-2 hover:border-rose-500/50 hover:bg-neutral-800/70 hover:shadow-lg hover:shadow-rose-500/15 hover:scale-105 text-xs"
                               >
                                 <span class="relative z-10">{{ opt }}</span>
                               </button>
@@ -295,20 +295,20 @@ import { Petals3dComponent } from './petals-3d.component';
 
 
             <!-- SECTION 4: The Essence -->
-            <div class="bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl p-10 rounded-3xl border border-neutral-700/50 shadow-2xl relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-rose-500/10 to-transparent rounded-full blur-2xl"></div>
+            <div class="bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl p-6 rounded-2xl border border-neutral-700/50 shadow-2xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-rose-500/10 to-transparent rounded-full blur-2xl"></div>
               <div class="relative z-10">
-                <div class="flex items-center gap-3 mb-10">
-                  <div class="h-px w-8 bg-gradient-to-r from-rose-500/60 to-transparent"></div>
+                <div class="flex items-center gap-2 mb-6">
+                  <div class="h-px w-6 bg-gradient-to-r from-rose-500/60 to-transparent"></div>
                   <h3 class="text-xs font-bold tracking-[0.3em] text-rose-400/90 uppercase">IV. The Essence</h3>
                   <div class="h-px flex-1 bg-gradient-to-r from-rose-500/60 to-transparent"></div>
                 </div>
 
                 <!-- Flavors -->
-                <div class="space-y-6 mb-10">
-                  <label class="block text-2xl font-serif text-neutral-200">Which flavors speak to your soul?</label>
-                  <p class="text-neutral-400 text-sm italic">Select up to 3 from the list below, or write your own custom flavor</p>
-                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="space-y-3 mb-6">
+                  <label class="block text-base font-serif text-neutral-200">Which flavors speak to your soul?</label>
+                  <p class="text-neutral-400 text-xs italic">Select up to 3 from the list below, or write your own custom flavor</p>
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                     @for (flavor of flavorOptions(); track flavor) {
                       <button 
                         type="button"
@@ -322,7 +322,7 @@ import { Petals3dComponent } from './petals-3d.component';
                         [class.bg-neutral-800/50]="!selectedFlavors().includes(flavor)"
                         [class.text-neutral-300]="!selectedFlavors().includes(flavor)"
                         [class.border-neutral-700]="!selectedFlavors().includes(flavor)"
-                        class="py-4 px-3 rounded-xl transition-all duration-300 hover:shadow-lg font-medium text-center relative overflow-hidden group border-2 hover:border-rose-500/50"
+                        class="py-2.5 px-2 rounded-lg transition-all duration-300 hover:shadow-lg font-medium text-center relative overflow-hidden group border-2 hover:border-rose-500/50 text-sm"
                       >
                         <span class="relative z-10">{{ flavor }}</span>
                       </button>
@@ -330,21 +330,21 @@ import { Petals3dComponent } from './petals-3d.component';
                   </div>
                   
                   <!-- Custom Flavor Input -->
-                  <div class="mt-6">
-                     <label class="block text-lg font-serif text-neutral-200 mb-3">Or write your own custom flavor:</label>
+                  <div class="mt-3">
+                     <label class="block text-sm font-serif text-neutral-200 mb-2">Or write your own custom flavor:</label>
                      <input 
                        [(ngModel)]="customFlavorInput" 
                        type="text" 
                        placeholder="e.g., Strawberry Basil, Vanilla Chai, etc." 
-                       class="w-full p-4 bg-neutral-800/50 border-2 border-neutral-700 rounded-xl focus:border-amber-500 outline-none placeholder-neutral-500 text-neutral-100 backdrop-blur-sm transition-colors"
+                       class="w-full p-2.5 bg-neutral-800/50 border-2 border-neutral-700 rounded-lg focus:border-amber-500 outline-none placeholder-neutral-500 text-sm text-neutral-100 backdrop-blur-sm transition-colors"
                      >
                   </div>
                 </div>
 
                 <!-- Benefits -->
-                <div class="space-y-6">
-                  <label class="block text-2xl font-serif text-neutral-200">What is your primary goal?</label>
-                  <div class="flex flex-wrap gap-3">
+                <div class="space-y-3">
+                  <label class="block text-base font-serif text-neutral-200">What is your primary goal?</label>
+                  <div class="flex flex-wrap gap-2">
                     @for (need of needOptions; track need) {
                        <button 
                         type="button"
@@ -354,7 +354,7 @@ import { Petals3dComponent } from './petals-3d.component';
                         [class.bg-amber-500/20]="selectedNeeds().includes(need)"
                         [class.text-amber-300]="selectedNeeds().includes(need)"
                         [class.border-amber-500/50]="selectedNeeds().includes(need)"
-                        class="px-6 py-3 rounded-full border-2 border-neutral-700 text-neutral-300 hover:border-amber-500/50 hover:text-neutral-100 transition-all bg-neutral-800/30 backdrop-blur-sm"
+                        class="px-4 py-2 rounded-full border-2 border-neutral-700 text-sm text-neutral-300 hover:border-amber-500/50 hover:text-neutral-100 transition-all bg-neutral-800/30 backdrop-blur-sm"
                       >
                         {{ need }}
                       </button>
@@ -365,30 +365,30 @@ import { Petals3dComponent } from './petals-3d.component';
             </div>
 
             <!-- SECTION 5: The Dream -->
-            <div class="bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl p-10 rounded-3xl border border-neutral-700/50 shadow-2xl relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-2xl"></div>
-              <div class="relative z-10 space-y-5">
-                <div class="flex items-center gap-3 mb-6">
-                  <div class="h-px w-8 bg-gradient-to-r from-amber-500/60 to-transparent"></div>
-                  <label class="block text-2xl font-serif text-neutral-200">V. The Dream</label>
+            <div class="bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-xl p-6 rounded-2xl border border-neutral-700/50 shadow-2xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-2xl"></div>
+              <div class="relative z-10 space-y-3">
+                <div class="flex items-center gap-2 mb-4">
+                  <div class="h-px w-6 bg-gradient-to-r from-amber-500/60 to-transparent"></div>
+                  <label class="block text-base font-serif text-neutral-200">V. The Dream</label>
                   <div class="h-px flex-1 bg-gradient-to-r from-amber-500/60 to-transparent"></div>
                 </div>
                 <textarea 
                   [(ngModel)]="openTextInput"
-                  rows="5"
-                  class="w-full p-5 bg-neutral-800/50 border-2 border-neutral-700 rounded-xl focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 outline-none transition-all placeholder-neutral-500 text-neutral-100 backdrop-blur-sm resize-none"
+                  rows="4"
+                  class="w-full p-3 bg-neutral-800/50 border-2 border-neutral-700 rounded-lg focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 outline-none transition-all placeholder-neutral-500 text-sm text-neutral-100 backdrop-blur-sm resize-none"
                   placeholder="Describe your perfect morning ritual or specific dietary needs..."
                 ></textarea>
               </div>
             </div>
 
             <!-- Submit Button -->
-            <div class="relative z-20 mt-8">
+            <div class="relative z-20 mt-6">
               <button 
                 type="button"
                 (click)="submit()"
                 [disabled]="!isValid() || isLoading()"
-                class="group relative w-full py-6 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-neutral-950 font-serif text-xl tracking-widest hover:from-amber-400 hover:via-amber-300 hover:to-amber-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none transition-all shadow-2xl hover:shadow-amber-500/30 transform hover:scale-[1.02] rounded-xl overflow-hidden font-bold"
+                class="group relative w-full py-4 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-neutral-950 font-serif text-base tracking-widest hover:from-amber-400 hover:via-amber-300 hover:to-amber-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none transition-all shadow-2xl hover:shadow-amber-500/30 transform hover:scale-[1.02] rounded-lg overflow-hidden font-bold"
                 [attr.aria-disabled]="!isValid() || isLoading()"
               >
                 <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000 pointer-events-none"></span>
@@ -403,7 +403,7 @@ import { Petals3dComponent } from './petals-3d.component';
               
               <!-- Helper text for incomplete form -->
               @if (!isValid() && !isLoading()) {
-                <p class="mt-4 text-center text-sm text-neutral-400 italic">
+                <p class="mt-3 text-center text-xs text-neutral-400 italic">
                   Please complete all required fields above to submit
                 </p>
               }
@@ -585,23 +585,49 @@ export class SurveyComponent {
       const mainFlavor = allFlavorsForDisplay[0] || 'Signature';
       const needs = this.selectedNeeds().join(' and ');
       
-      const successMessage = `Greetings, ${this.nameInput}.
+      const successMessage = `Thank you, ${this.nameInput}.
     
-For your journey, we have envisioned the "Tenjiku ${mainFlavor} Dawn Elixir."
+We have received your recommendation and appreciate you taking the time to share your preferences with us.
     
-This signature blend harmonizes the delicate notes of ${flavors} with the structural purity of our ${this.selectedSource()} collagen. It is a taste of serenity, designed to awaken the senses while working deep within.
+Your voice matters, and we are listening. We will be creating a perfect blend based on the most liked recommendations from our community.
     
-Specifically crafted to support ${needs}, this formulation offers a ${this.selectedDosage().toLowerCase()} potency to match your experience as a ${this.selectedExperience()}. 
-    
-Packaged in our ${this.selectedPackaging()}, it fits seamlessly into your life, honoring your wish: "${this.openTextInput || 'for a pure ritual'}".
+Your preferences for ${flavors} flavors, ${needs} benefits, ${this.selectedPackaging()}, and ${this.selectedDosage().toLowerCase()} potency have been noted. We will notify you at ${this.emailInput} when we launch the final product crafted from the collective wisdom of our community.
     
 Welcome to the House of Tenjiku.`;
 
       this.result.set(successMessage);
       console.log('Form submitted successfully!');
+      
+      // Scroll to the result section after a brief delay to ensure DOM has updated
+      setTimeout(() => {
+        const resultElement = document.getElementById('survey-result');
+        if (resultElement) {
+          resultElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          // Fallback to survey section if result element not found
+          const surveySection = document.getElementById('survey');
+          if (surveySection) {
+            surveySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }, 300);
     } catch (error) {
       console.error('Error submitting form:', error);
       this.result.set(`We encountered an issue while submitting your preferences. Please try again later or contact support. Error: ${error}`);
+      
+      // Scroll to show error message
+      setTimeout(() => {
+        const resultElement = document.getElementById('survey-result');
+        if (resultElement) {
+          resultElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          // Fallback to survey section if result element not found
+          const surveySection = document.getElementById('survey');
+          if (surveySection) {
+            surveySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }, 300);
     } finally {
       this.isLoading.set(false);
     }

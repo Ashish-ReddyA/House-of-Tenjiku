@@ -33,17 +33,23 @@ export class InterestService {
       const stored = localStorage.getItem(this.STORAGE_KEY);
       if (stored) {
         const data = JSON.parse(stored);
-        this.interestCount.set(data.count || 0);
+        // Ensure count is at least 84, continue from there
+        const currentCount = data.count || 0;
+        this.interestCount.set(Math.max(currentCount, 84));
         this.submissions.set(data.submissions || []);
+        // Update storage if we adjusted the count
+        if (currentCount < 84) {
+          this.saveToStorage();
+        }
       } else {
-        // Initialize with some base count for transparency
-        this.interestCount.set(0);
+        // Initialize with base count of 84
+        this.interestCount.set(84);
         this.submissions.set([]);
         this.saveToStorage();
       }
     } catch (e) {
       console.error('Error loading interest data:', e);
-      this.interestCount.set(0);
+      this.interestCount.set(84);
       this.submissions.set([]);
     }
   }

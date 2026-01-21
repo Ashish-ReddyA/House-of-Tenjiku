@@ -20,16 +20,10 @@ import { ThreeSceneComponent } from './three-scene.component';
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(217,119,6,0.1),transparent_60%)]"></div>
         <div class="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(28,25,23,0.5)_50%,transparent_100%)]"></div>
       </div>
-
-      <!-- Background Image with Dark Overlay -->
-      <div class="absolute inset-0 z-[2] w-full h-full">
-        <img 
-          src="/House-of-Tenjiku/image2.png" 
-          alt="House of Tenjiku Background" 
-          class="w-full h-full object-cover opacity-30"
-        >
-        <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/60 to-neutral-950/80"></div>
-      </div>
+      
+      <div class="absolute left-0.5 top-30 z-50">
+  <img src="/House-of-Tenjiku/Bluesachets.png" alt="Blue Sachets" class="w-auto h-auto opacity-100" style="width: 300px; height: 300px;">
+</div>
 
       <!-- Subtle Grid Pattern -->
       <div class="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] z-[2]"></div>

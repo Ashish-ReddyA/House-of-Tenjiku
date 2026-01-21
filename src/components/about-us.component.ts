@@ -18,6 +18,7 @@ import { Petals3dComponent } from './petals-3d.component';
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(217,119,6,0.05),transparent_70%)]"></div>
       </div>
 
+
       <!-- Subtle Grid Pattern -->
       <div class="absolute inset-0 z-[2] opacity-[0.02] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
@@ -47,7 +48,7 @@ import { Petals3dComponent } from './petals-3d.component';
           </div>
           <div class="order-1 md:order-2 relative">
              <div class="absolute inset-0 border-2 border-amber-500/30 translate-x-4 translate-y-4 rounded-2xl"></div>
-             <img src="https://picsum.photos/id/431/600/500" alt="Tea Ceremony Ritual" class="w-full h-auto rounded-2xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl relative z-10 opacity-90">
+             <img src="/House-of-Tenjiku/collagen.png" alt="Collagen Product" class="w-full h-auto rounded-2xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl relative z-10 opacity-90">
           </div>
         </div>
 
