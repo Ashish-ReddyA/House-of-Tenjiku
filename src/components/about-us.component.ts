@@ -48,7 +48,7 @@ import { Petals3dComponent } from './petals-3d.component';
           </div>
           <div class="order-1 md:order-2 relative">
              <div class="absolute inset-0 border-2 border-amber-500/30 translate-x-4 translate-y-4 rounded-2xl"></div>
-             <img src="/House-of-Tenjiku/collagen.png" alt="Collagen Product" class="w-full h-auto rounded-2xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl relative z-10 opacity-90">
+             <img src="/collagen.png" alt="Collagen Product" class="w-full h-auto rounded-2xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl relative z-10 opacity-90">
           </div>
         </div>
 
